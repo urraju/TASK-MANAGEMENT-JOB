@@ -1,0 +1,21 @@
+
+.pagination .active > .page-link {
+    border: none;
+    background: #00a3c4;
+    color: #EEEEEE;
+}
+.pagination .page-link{
+    color: #00a3c4;
+    background: #EEEEEE;
+}
+
+.dark  .pagination .active > .page-link{
+    border: none;
+    background: #00a3c4;
+    color: #EEEEEE;
+}
+.dark .pagination .page-link{
+    border: none;
+    color: #EEE;
+    background: #1E293B;
+}

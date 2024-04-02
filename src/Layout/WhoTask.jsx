@@ -5,16 +5,16 @@ import task2 from "../assets/taskimg/task2.jpg";
 import { BsCheck } from "react-icons/bs";
 const WhoTask = () => {
   return (
-    <div className="p-2 md:p-5 md:mt-32">
+    <div className="p-2 md:p-5 ">
       <HeadingContent
         heading={"Development"}
         subHeading={"Only For Developer"}
       />
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto mt-20">
         <div className="flex gap-10 flex-col md:flex-row items-center">
           <img className="w-[600px]" src={task1} alt="" />
           <div>
-            <h1 className="text-3xl font-bold">Developer can be use This site</h1>
+            <h1 className="text-4xl font-bold">Developer can be use This site</h1>
             <p className="mt-3 text-lg mb-4">
               This site is for developers only. What would you do if you could
               work from work? <br /> You can see your dashboard by pressing the
@@ -35,7 +35,7 @@ const WhoTask = () => {
         {/* task 2 */}
         <div className="flex items-center mt-10 md:mt-0 gap-10 flex-col-reverse md:flex-row justify-evenly ">
           <div className="text-right">
-            <h1 className="text-2xl mb-4 font-semibold font-rubik">Only For Developer can be access</h1>
+            <h1 className="text-4xl mb-4 font-semibold font-rubik">Only For Developer can be access</h1>
             <p>
               This site is for developers only. What would you do if you could
               work from work? <br /> You can see your dashboard by pressing the

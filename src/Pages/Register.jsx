@@ -1,14 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { BsFacebook, BsLinkedin, BsGoogle } from "react-icons/bs";
-import logo from '../assets/registation/register.png'
+import logo from "../assets/registation/register.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
- 
+
 import toast, { Toaster } from "react-hot-toast";
 import useAuth from "../Hooks/useAuth";
 import HelmetUse from "../Components/Shared/HelmetUse";
 import SocialLogin from "../Components/Shared/SocialLogin";
- 
+
 const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Register = () => {
     if (!/[@#$%^&+=!]/.test(data.password)) {
       return toast.error("Please put one special symbol!");
     }
-    
+
     registation(data.email, data.password).then((result) => {
       userUpdateProfile(data.name, data.photo);
       toast.success("Registation Successfull");

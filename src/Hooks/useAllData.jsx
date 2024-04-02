@@ -1,12 +1,10 @@
-
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "./useAxios";
 import useAuth from "./useAuth";
- 
 
 const useAllData = () => {
-  const {user} = useAuth()
-  const axiosPublic =  useAxios();
+  const { user } = useAuth();
+  const axiosPublic = useAxios();
   const {
     data: task = [],
     refetch,

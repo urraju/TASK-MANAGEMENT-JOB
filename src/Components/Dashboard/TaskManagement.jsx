@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { useDrop } from "react-dnd";
 import { AiFillEdit } from "react-icons/ai";
+import emptyImg from "../../assets/taskimg/emptyFIle.png";
 // pagination import package
 import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/classic.css";
@@ -138,44 +139,59 @@ const TaskManagement = () => {
               Create new task <AiFillEdit />
             </button>
           </div>
-          <div className="border-b mt-3 border-gray-400 w-full"></div>
+          <div className="border-b border-dashed mt-3 border-gray-400 w-full"></div>
           <div>
-            <div className="flex justify-between mt-5 gap-3 flex-col md:flex-row text-white">
-              <div className="text-white flex-1">
-                <h1 className="uppercase border border-orange-600 border-opacity-50 mx-auto w-max px-3 rounded ">
-                  Pending Task
-                </h1>
-                <div ref={removeTodoRef}>
-                  {taskData?.slice(0, 3).map((todo, index) => (
-                    <TaskTodos
-                      key={todo._id}
-                      handleDelete={handleDelete}
-                      index={index}
-                      item={todo}
-                      onDropTodo={moveTodo}
-                      todoType="taskData"
-                    />
-                  ))}
+            {taskData.length > 0 ? (
+              <div className="flex justify-between mt-5 gap-3 flex-col md:flex-row text-white">
+                <div className="text-white flex-1">
+                  <h1 className="uppercase border border-orange-600 border-opacity-50 mx-auto w-max px-3 rounded ">
+                    Pending Task
+                  </h1>
+                  <div ref={removeTodoRef}>
+                    {taskData?.slice(0, 3).map((todo, index) => (
+                      <TaskTodos
+                        key={todo._id}
+                        handleDelete={handleDelete}
+                        index={index}
+                        item={todo}
+                        onDropTodo={moveTodo}
+                        todoType="taskData"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="text-white flex-1">
+                  <h1 className="uppercase border border-cyan-600 border-opacity-80 mx-auto w-max px-3 rounded ">
+                    Complete Task
+                  </h1>
+                  <div ref={addTodoRef}>
+                    {ongoing?.slice(0, 3).map((todo, index) => (
+                      <TaskTodos
+                        key={todo._id}
+                        handleDelete={handleDelete}
+                        index={index}
+                        item={todo}
+                        onDropTodo={removetodo}
+                        todoType="onGoing"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="text-white flex-1">
-                <h1 className="uppercase border border-cyan-600 border-opacity-80 mx-auto w-max px-3 rounded ">
-                  Complete Task
-                </h1>
-                <div ref={addTodoRef}>
-                  {ongoing?.slice(0,3).map((todo, index) => (
-                    <TaskTodos
-                      key={todo._id}
-                      handleDelete={handleDelete}
-                      index={index}
-                      item={todo}
-                      onDropTodo={removetodo}
-                      todoType="onGoing"
-                    />
-                  ))}
-                </div>
+            ) : (
+              <div className="flex w-full justify-center items-center flex-col gap-5 h-[450px]">
+                <p className="text-3xl text-white ">
+                  No task available please create a new task !!
+                </p>
+                <img src={emptyImg} alt="" />
+                <button
+                  onClick={handlePost}
+                  className="bg-white flex items-center gap-2  z-30 text-rose-800 px-4 py-2 rounded"
+                >
+                  Create new task <AiFillEdit />
+                </button>
               </div>
-            </div>
+            )}
           </div>
         </div>
 

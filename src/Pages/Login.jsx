@@ -1,11 +1,10 @@
-
 import React, { useEffect, useState } from "react";
 import { BsFacebook, BsLinkedin, BsGoogle } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import HelmetUse from "../Components/Shared/HelmetUse";
 import SocialLogin from "../Components/Shared/SocialLogin";
- 
+
 const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,10 +22,9 @@ const Login = () => {
 
   return (
     <div className="md:py-10 ">
-      <HelmetUse helmet={'Login'}/>
+      <HelmetUse helmet={"Login"} />
       <div className=" rounded-xl max-w-7xl mx-auto">
         <div className="flex flex-col p-3  md:flex-row items-center justify-center gap-20">
-           
           <div className="border w-full rounded-lg border-rose-200 font-hebo md:w-1/3 p-10">
             <h1 className="text-center font-semibold text-3xl">Login</h1>
             <div className="mt-8">

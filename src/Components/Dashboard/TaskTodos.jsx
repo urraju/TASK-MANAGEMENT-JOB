@@ -19,43 +19,36 @@ const Taskitems = ({ item, index, todoType, onDropTodo, handleDelete }) => {
   });
   return (
     <div>
-      <div>
-        <div
-          ref={dragRef}
-          className="bg-white/10 backdrop-blur border-gray-600 mb-2 border mt-5 p-3 rounded"
-        >
-          <h1 className="text-xl text-cyan-500 font-semibold">{item.title}</h1>
+      <div
+        ref={dragRef}
+        className="bg-white/10 backdrop-blur border-gray-600 mb-2 border mt-5 p-3 rounded"
+      >
+        <h1 className="text-xl text-cyan-500 font-semibold">{item.title}</h1>
 
-          <p className="font-normal max-w-[450px]   tracking-wide text-gray-300">
-            {item.description}
+        <p className="font-normal max-w-[450px]   tracking-wide text-gray-300">
+          {item.description}
+        </p>
+
+        <p className="capitalize text-gray-300 ">
+          {" "}
+          <span className="text-white">Priority : </span>
+          {item.priority}
+        </p>
+
+        <div className="flex justify-between">
+          <p>
+            <span>DeadLine : </span> {item.deadline}
           </p>
 
-          <p className="capitalize text-gray-300 ">
-            {" "}
-            <span className="text-white">Priority : </span>
-            {item.priority}
-          </p>
-
-          <div className="flex justify-between">
-
-            <p>
-              <span>DeadLine : </span> {item.deadline}
-            </p>
-
-            <div className="flex gap-5">
-              <AiFillDelete
-                onClick={() => handleDelete(item._id)}
-                className="bg-red-600 w-6 h-6 rounded-full p-1"
-              />{" "}
-
-              <Link to={`/dashboard/update/${item._id}`}>
-                <AiFillEdit className="bg-cyan-600 w-6 h-6 rounded-full p-1" />
-              </Link>
-              
-            </div>
-
+          <div className="flex gap-5">
+            <AiFillDelete
+              onClick={() => handleDelete(item._id)}
+              className="bg-red-600 w-6 h-6 rounded-full p-1"
+            />{" "}
+            <Link to={`/dashboard/update/${item._id}`}>
+              <AiFillEdit className="bg-cyan-600 w-6 h-6 rounded-full p-1" />
+            </Link>
           </div>
-
         </div>
       </div>
     </div>

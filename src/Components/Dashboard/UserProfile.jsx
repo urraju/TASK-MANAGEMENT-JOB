@@ -1,13 +1,14 @@
 import useAuth from "../../Hooks/useAuth";
+import { AiFillEdit } from "react-icons/ai";
 
 const UserProfile = () => {
   const { user } = useAuth();
   return (
     <div className="w-full">
-      <div className=" bg-background bg-no-repeat h-screen bg-cover md:px-10 md:py-5  rounded-lg  to-sky-500  from-sky-500">
-        <div className="backdrop-blur border-l border-rose-700 p-5 rounded-lg md:rounded-xl bg-white/10">
+      <div className=" bg-background bg-no-repeat  h-screen bg-cover md:px-10 md:py-5  rounded-lg  to-sky-500  from-sky-500 ">
+        <div className="  border-l w-[500px] h-max border-rose-700 ml-32 mt-32 p-5 rounded relative">
           <img
-            className=" w-32 border p-2 rounded-full"
+            className="w-32 h-32  object-cover border p-1 rounded-full"
             src={user?.photoURL}
             alt=""
           />
@@ -43,6 +44,7 @@ const UserProfile = () => {
               Set Your Education
             </p>
           </div>
+          <button className="text-white flex items-center gap-3 absolute top-0 right-0 border-b py-2 border-cyan-500">Edit profile<AiFillEdit/> </button>
         </div>
       </div>
     </div>

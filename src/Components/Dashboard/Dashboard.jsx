@@ -1,17 +1,8 @@
-import {
-  FaBars,
-  FaEnvelope,
-   
-  FaUser,
-  
-} from "react-icons/fa";
+import { FaBars, FaEnvelope, FaUser } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
-import {
-  MdHome,
-  MdManageAccounts
-} from "react-icons/md";
- 
+import { MdHome, MdManageAccounts } from "react-icons/md";
+
 import HelmetUse from "../Shared/HelmetUse";
 import useAuth from "../../Hooks/useAuth";
 
@@ -26,7 +17,11 @@ const DashBoard = () => {
           <div>
             <div className="flex gap-3 items-center mb-5 ">
               <div className="border rounded-full p-2">
-                <img className="rounded-full w-24" src={user.photoURL} alt="" />
+                <img
+                  className="rounded-full w-24 h-24 object-cover obj"
+                  src={user.photoURL}
+                  alt=""
+                />
               </div>
               <div>
                 <p className=" text-rose-200  font-rubik text-2xl">
@@ -63,7 +58,7 @@ const DashBoard = () => {
             </>
           </ul>
 
-          <div className="border-b mt-5"></div>
+          <div className="border-b border-dashed mt-5"></div>
 
           <ul className="mt-4 text-white flex flex-col gap-3">
             <NavLink

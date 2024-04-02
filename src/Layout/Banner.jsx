@@ -34,8 +34,8 @@ const Banner = () => {
           </p>
           <Link to="dashboard/taskmanagement">
             <button className="px-6 hover:tracking-wide duration-200 py-2 rounded z-50 flex items-center gap-2 cursor-pointer bg-gradient-to-r from-pink-600 to-orange-400 font-rubik font-light text-white shadow-lg mt-4">
-               Go to Dashboard
-               <VscArrowSmallRight className="text-2xl"/>
+              Go to Dashboard
+              <VscArrowSmallRight className="text-2xl" />
             </button>
           </Link>
         </div>

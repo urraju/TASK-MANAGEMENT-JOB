@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement : <NotFound/>,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -37,21 +37,24 @@ const router = createBrowserRouter([
         <DashBoard />
       </PrivateRoute>
     ),
-    children : [
+    children: [
       {
-        path : 'taskmanagement',
-        element : <TaskManagement/>
+        path: "taskmanagement",
+        element: <TaskManagement />,
       },
       {
-        path : 'userprofile',
-        element : <UserProfile/>
+        path: "userprofile",
+        element: <UserProfile />,
       },
       {
-        path : 'update/:id',
-        element : <Update/>,
-        loader : ({params}) => fetch(`http://localhost:5000/task/${params.id}`)
-      }
-    ]
+        path: "update/:id",
+        element: <Update />,
+        loader: ({ params }) =>
+          fetch(
+            `https://task-management-job-server.vercel.app/task/${params.id}`
+          ),
+      },
+    ],
   },
 ]);
 export default router;

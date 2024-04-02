@@ -6,7 +6,7 @@ const UserProfile = () => {
   return (
     <div className="w-full">
       <div className=" bg-background bg-no-repeat  h-screen bg-cover md:px-10 md:py-5  rounded-lg  to-sky-500  from-sky-500 ">
-        <div className="  border-l w-[500px] h-max border-cyan-700 lg:ml-32 lg:mt-32 p-5 rounded relative">
+        <div className=" border-l md:w-[500px] h-max border-cyan-700 lg:ml-32 lg:mt-32 p-5 rounded relative">
           <img
             className="w-32 h-32  object-cover border p-1 rounded-full"
             src={user?.photoURL}
@@ -44,7 +44,7 @@ const UserProfile = () => {
               Set Your Education
             </p>
           </div>
-          <button className="text-white flex items-center gap-3 absolute top-0 lg:right-0 right-36 border-b py-2 border-cyan-500">Edit profile<AiFillEdit/> </button>
+          <button className="text-white flex items-center gap-3 absolute top-0 lg:right-0 right-5 border-b py-2 border-cyan-500">Edit profile<AiFillEdit/> </button>
         </div>
       </div>
     </div>

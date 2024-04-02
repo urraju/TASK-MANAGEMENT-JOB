@@ -17,12 +17,12 @@ const TaskManagement = () => {
   const axiosPublic = useAxios();
   const { user } = useAuth();
   const [task, refetch] = useAllData();
-  const [taskData, setTaskData] = useState([]);
+  const [taskData, setTaskData] = useState([...task]);
   const [ongoing, setOngoing] = useState([]);
   // pagination code start
   const [currentPage, setCurrentPage] = useState(0);
   const ItemsPerPage = 3;
-  
+
   useEffect(() => {
     const indexOfLastItem = currentPage * ItemsPerPage;
     const indexOfFirstItem = indexOfLastItem - ItemsPerPage;
@@ -35,6 +35,7 @@ const TaskManagement = () => {
   useEffect(() => {
     setTaskData(task);
   }, [task]);
+
   const {
     register,
     handleSubmit,
@@ -106,10 +107,6 @@ const TaskManagement = () => {
     accept: "onGoing",
     collect: (monitor) => ({ isOver: !!monitor.isOver() }),
   });
-  const [{ isOver: isComplete }, addCompleteRef] = useDrop({
-    accept: "complete",
-    collect: (monitor) => ({ isOver: !!monitor.isOver() }),
-  });
 
   const moveTodo = (item) => {
     console.log(item);
@@ -149,7 +146,7 @@ const TaskManagement = () => {
                   Pending Task
                 </h1>
                 <div ref={removeTodoRef}>
-                  {taskData?.map((todo, index) => (
+                  {taskData?.slice(0, 3).map((todo, index) => (
                     <TaskTodos
                       key={todo._id}
                       handleDelete={handleDelete}
@@ -166,7 +163,7 @@ const TaskManagement = () => {
                   Complete Task
                 </h1>
                 <div ref={addTodoRef}>
-                  {ongoing?.map((todo, index) => (
+                  {ongoing?.slice(0,3).map((todo, index) => (
                     <TaskTodos
                       key={todo._id}
                       handleDelete={handleDelete}
@@ -281,14 +278,18 @@ const TaskManagement = () => {
           </dialog>
         </div>
       </div>
-      <div className=" mt-20 py-5">
-        {/* pagination  */}
-        <ResponsivePagination
-          current={currentPage}
-          total={totalPages}
-          onPageChange={setCurrentPage}
-        />
-      </div>
+      {taskData.length > 0 ? (
+        <div className="absolute bottom-0 left-1/2 py-5">
+          {/* pagination  */}
+          <ResponsivePagination
+            current={currentPage}
+            total={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

@@ -3,11 +3,11 @@ import { FaEdit } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxios from "../Hooks/useAxios";
 import Swal from "sweetalert2";
-const Update = ( ) => {
-    const axiosPublic = useAxios();
-    const navigate = useNavigate()
-    const item = useLoaderData()
-    console.log(item);
+const Update = () => {
+  const axiosPublic = useAxios();
+  const navigate = useNavigate();
+  const item = useLoaderData();
+  console.log(item);
   const {
     register,
     handleSubmit,
@@ -32,9 +32,8 @@ const Update = ( ) => {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate('/dashboard/taskmanagement')
+        navigate("/dashboard/taskmanagement");
         reset();
-
       }
     });
   };

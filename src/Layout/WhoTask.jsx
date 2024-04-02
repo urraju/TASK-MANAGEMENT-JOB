@@ -10,7 +10,7 @@ const WhoTask = () => {
         heading={"Development"}
         subHeading={"Only For Developer"}
       />
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <div className="flex gap-10 flex-col md:flex-row items-center">
           <img className="w-[600px]" src={task1} alt="" />
           <div>
@@ -20,13 +20,13 @@ const WhoTask = () => {
               work from work? <br /> You can see your dashboard by pressing the
               Dia button for better understanding.
             </p>
-            <p className="flex items-center text-cyan-700 font-semibold gap-1"><BsCheck className="text-2xl text-green-500"/> Full Stack Development</p>
-            <p className="flex items-center text-cyan-700 font-semibold gap-1"><BsCheck className="text-2xl text-green-500"/>  Mern Stack Development</p>
-            <p className="flex items-center text-cyan-700 font-semibold gap-1"><BsCheck className="text-2xl text-green-500"/> Front-End  Development</p>
-            <p className="flex items-center text-cyan-700 font-semibold gap-1"><BsCheck className="text-2xl text-green-500"/> React  Development</p>
-            <p className="flex items-center text-cyan-700 font-semibold gap-1"><BsCheck className="text-2xl text-green-500"/>  React Native Development</p>
+            <p className="flex items-center text-cyan-800 text-sm gap-1"><BsCheck className="text-2xl text-green-500"/> Full Stack Development</p>
+            <p className="flex items-center text-cyan-800 text-sm gap-1"><BsCheck className="text-2xl text-green-500"/>  Mern Stack Development</p>
+            <p className="flex items-center text-cyan-800 text-sm gap-1"><BsCheck className="text-2xl text-green-500"/> Front-End  Development</p>
+            <p className="flex items-center text-cyan-800 text-sm gap-1"><BsCheck className="text-2xl text-green-500"/> React  Development</p>
+            <p className="flex items-center text-cyan-800 text-sm gap-1"><BsCheck className="text-2xl text-green-500"/>  React Native Development</p>
             <Link to="dashboard/taskmanagement">
-              <button className="px-4 py-2 rounded border border-rose-200 font-rubik font-light text-rose-500 shadow-lg mt-4">
+              <button className="px-4 py-2 rounded border border-rose-500 hover:bg-rose-500 hover:text-white duration-200 font-rubik font-light text-rose-500 shadow-lg mt-4">
                 Let's Explore
               </button>
             </Link>
@@ -43,7 +43,7 @@ const WhoTask = () => {
             </p>
             
             <Link to='dashboard/taskmanagement'>
-            <button className="px-4 py-2 rounded bg-rose-500 font-rubik font-light text-white shadow-lg mt-4">
+            <button className="px-4 py-2 rounded bg-rose-500 border border-rose-500 hover:text-rose-500 hover:bg-transparent hover:border hover:border-rose-500 duration-200 font-rubik font-light text-white shadow-lg mt-4">
               Let's Explore
             </button>
           </Link>

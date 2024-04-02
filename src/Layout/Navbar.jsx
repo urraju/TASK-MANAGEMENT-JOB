@@ -94,7 +94,8 @@ const Navbar = () => {
 
           <div className="navbar-end w-full ">
             <div className="dropdown dropdown-end">
-              <ul className="menu font-bold  items-center hidden lg:flex menu-horizontal px-1  uppercase  gap-5 ">
+             <div>
+             <ul className="menu font-bold  items-center hidden lg:flex menu-horizontal px-1  uppercase  gap-5 ">
                 {nav}
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
@@ -102,10 +103,11 @@ const Navbar = () => {
                   </div>
                 </label>
               </ul>
+             </div>
               <NavLink to="/" className="  items-center lg:hidden flex w-full ">
-                <img className="w-12 " src={logo} alt="" />
+                <img className="md:w-12 w-10 " src={logo} alt="" />
                 <div>
-                  <h1 className="text-3xl font-bold   first-letter:text-rose-400 first-letter:text-4xl ml-5">
+                  <h1 className="md:text-3xl text-2xl font-bold   first-letter:text-rose-400 first-letter:text-4xl ml-5">
                     Task.com
                   </h1>
                 </div>

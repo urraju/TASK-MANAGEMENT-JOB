@@ -120,7 +120,7 @@ const TaskManagement = () => {
     setTaskData((prev) => [...prev, item]);
   };
   return (
-    <div className="w-full bg-background  rounded-lg  relative bg-cover bg-no-repeat bg-opacity-20 ">
+    <div className="w-full bg-background  bg-center rounded-lg  relative bg-cover bg-no-repeat bg-opacity-20 ">
       <HeadingContent
         heading={"Task Management"}
         subHeading={"Create a new task"}
@@ -140,8 +140,8 @@ const TaskManagement = () => {
             </button>
           </div>
           <div className="border-b border-dashed mt-3 border-gray-400 w-full"></div>
-          <div>
-            {taskData.length > 0 ? (
+          <div className="md:min-h-[700px] lg:h-max mb-20 py-20 lg:py-5 h-max">
+            {taskData.length > 0 || ongoing.length > 0 ? (
               <div className="flex justify-between mt-5 gap-3 flex-col md:flex-row text-white">
                 <div className="text-white flex-1">
                   <h1 className="uppercase border border-orange-600 border-opacity-50 mx-auto w-max px-3 rounded ">
@@ -294,8 +294,8 @@ const TaskManagement = () => {
           </dialog>
         </div>
       </div>
-      {taskData.length > 0 ? (
-        <div className="absolute bottom-0 left-1/2 py-5">
+      {taskData.length > 0 || ongoing.length > 0 ? (
+        <div className="absolute bottom-0 left-1/2 py-5  ">
           {/* pagination  */}
           <ResponsivePagination
             current={currentPage}

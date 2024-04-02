@@ -21,7 +21,7 @@ const Taskitems = ({ item, index, todoType, onDropTodo, handleDelete }) => {
     <div>
       <div
         ref={dragRef}
-        className="bg-white/10 backdrop-blur border-gray-600 mb-2 border mt-5 p-3 rounded"
+        className="bg-white/10 backdrop-blur  border-gray-600 space-y-1 mb-2 border mt-5 p-3 rounded"
       >
         <h1 className="text-xl text-cyan-500 font-semibold">{item.title}</h1>
 
@@ -34,6 +34,16 @@ const Taskitems = ({ item, index, todoType, onDropTodo, handleDelete }) => {
           <span className="text-white">Priority : </span>
           {item.priority}
         </p>
+
+        {todoType === "taskData" ? (
+          <p>
+            Status : <span className="text-orange-600">Pending</span>
+          </p>
+        ) : todoType === "onGoing" ? (
+          <p>
+            Status : <span className="text-green-600">Completed</span>
+          </p>
+        ) : null}
 
         <div className="flex justify-between">
           <p>

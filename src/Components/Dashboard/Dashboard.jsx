@@ -18,7 +18,7 @@ const DashBoard = () => {
             <div className="flex gap-3 items-center mb-5 ">
               <div className="border rounded-full p-2">
                 <img
-                  className="rounded-full w-24 h-24 object-cover obj"
+                  className="rounded-full max-w-24 max-h-24 object-cover obj"
                   src={user.photoURL}
                   alt=""
                 />

@@ -12,7 +12,7 @@ const DashBoard = () => {
   return (
     <div>
       <HelmetUse helmet={"Dashboard"} />
-      <div className=" w-full p-2 flex flex-col lg:flex-row md:p-5 gap-10 justify-evenly   ">
+      <div className=" w-full p-2 flex flex-col lg:flex-row md:p-5 gap-2 md:gap-8 justify-evenly   ">
         <div className=" bg-background bg-no-repeat bg-cover bg-center rounded-lg p-10 lg:w-[500px]  h-max lg:min-h-screen">
           <div>
             <div className="flex gap-3 items-center mb-5 ">

@@ -21,7 +21,7 @@ const Taskitems = ({ item, index, todoType, onDropTodo, handleDelete }) => {
     <div>
       <div
         ref={dragRef}
-        className="bg-white/10 backdrop-blur  border-gray-600 space-y-1 mb-2 border mt-5 p-3 rounded"
+        className={`bg-black/5 backdrop-blur space-y-1 mb-2 border mt-5 p-3 rounded ${todoType === 'taskData' ? 'border border-orange-500 border-opacity-40' : todoType === 'onGoing' ? 'border-green-500 border border-opacity-40' : null}`}
       >
         <h1 className="text-xl text-cyan-500 font-semibold">{item.title}</h1>
 

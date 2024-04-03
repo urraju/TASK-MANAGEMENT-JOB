@@ -142,7 +142,7 @@ const TaskManagement = () => {
           <div className="border-b border-dashed mt-3 border-gray-400 w-full"></div>
           <div className="md:min-h-[700px] lg:h-max mb-20 py-20 lg:py-5 h-max">
             {taskData.length > 0 || ongoing.length > 0 ? (
-              <div className="flex justify-between mt-5 gap-3 flex-col md:flex-row text-white">
+              <div className="flex justify-between mt-5 gap-4 lg:gap-8 flex-col md:flex-row text-white">
                 <div className="text-white flex-1">
                   <h1 className="uppercase border border-orange-600 border-opacity-50 mx-auto w-max px-3 rounded ">
                     Pending Task
